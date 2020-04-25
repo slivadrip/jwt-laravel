@@ -76,3 +76,27 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+composer require tymon/jwt-auth 1.0.0-rc.5
+
+'providers' => [
+
+    ...
+
+    Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+]
+
+
+php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+
+
+php artisan jwt:secret
+
+php artisan make:controller Api\\AuthController
+
+
+php artisan route:list
+
+ php artisan make:middleware apiProtectedRoute
